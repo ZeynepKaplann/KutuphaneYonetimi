@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69704f7966c047e79c17179cd05e2358" Name="Diagram1">
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.sysdiagrams" Width="1.5" PointX="9.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Ceza" Width="1.5" PointX="5.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Kategori" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_KitapEmanet" Width="1.5" PointX="9.625" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Kitaplar" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Personel" Width="1.5" PointX="7.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Uyeler" Width="1.5" PointX="7.375" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_YayınEvi" Width="1.5" PointX="0.625" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Yazar" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KutuphaneYonetimiModel.tbl_Yetki" Width="1.5" PointX="4" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Ceza_tbl_KitapEmanet" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Ceza_tbl_Kitaplar" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Ceza_tbl_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Ceza_tbl_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Kitaplar_tbl_Kategori" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_KitapEmanet_tbl_Kitaplar" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_KitapEmanet_tbl_Personel" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_KitapEmanet_tbl_Uyeler" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Kitaplar_tbl_YayınEvi" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Kitaplar_tbl_Yazar" ManuallyRouted="false" />
+        <AssociationConnector Association="KutuphaneYonetimiModel.FK_tbl_Personel_tbl_Yetki" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
