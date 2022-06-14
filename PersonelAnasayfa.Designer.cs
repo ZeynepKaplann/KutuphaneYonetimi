@@ -35,7 +35,6 @@
             this.btn_üyeler = new System.Windows.Forms.Button();
             this.btn_kitaplar = new System.Windows.Forms.Button();
             this.btn_istatistik = new System.Windows.Forms.Button();
-            this.btn_emanetVer = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -44,7 +43,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_Sepet = new System.Windows.Forms.Button();
             this.Emanet = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -140,25 +138,12 @@
             this.btn_istatistik.Text = "İstatistik";
             this.btn_istatistik.UseVisualStyleBackColor = false;
             // 
-            // btn_emanetVer
-            // 
-            this.btn_emanetVer.BackColor = System.Drawing.Color.Teal;
-            this.btn_emanetVer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_emanetVer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_emanetVer.Location = new System.Drawing.Point(577, 694);
-            this.btn_emanetVer.Name = "btn_emanetVer";
-            this.btn_emanetVer.Size = new System.Drawing.Size(174, 58);
-            this.btn_emanetVer.TabIndex = 14;
-            this.btn_emanetVer.Text = "EMANET VER";
-            this.btn_emanetVer.UseVisualStyleBackColor = false;
-            this.btn_emanetVer.Click += new System.EventHandler(this.btn_emanetTakip_Click);
-            // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Teal;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.Location = new System.Drawing.Point(847, 426);
+            this.button5.Location = new System.Drawing.Point(903, 698);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(180, 58);
             this.button5.TabIndex = 15;
@@ -236,19 +221,9 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // btn_Sepet
-            // 
-            this.btn_Sepet.Location = new System.Drawing.Point(182, 694);
-            this.btn_Sepet.Name = "btn_Sepet";
-            this.btn_Sepet.Size = new System.Drawing.Size(248, 58);
-            this.btn_Sepet.TabIndex = 16;
-            this.btn_Sepet.Text = "Sepet";
-            this.btn_Sepet.UseVisualStyleBackColor = true;
-            this.btn_Sepet.Click += new System.EventHandler(this.btn_Sepet_Click);
-            // 
             // Emanet
             // 
-            this.Emanet.Location = new System.Drawing.Point(953, 704);
+            this.Emanet.Location = new System.Drawing.Point(665, 717);
             this.Emanet.Name = "Emanet";
             this.Emanet.Size = new System.Drawing.Size(75, 23);
             this.Emanet.TabIndex = 17;
@@ -263,9 +238,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1246, 834);
             this.Controls.Add(this.Emanet);
-            this.Controls.Add(this.btn_Sepet);
             this.Controls.Add(this.button5);
-            this.Controls.Add(this.btn_emanetVer);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.btn_istatistik);
@@ -310,9 +283,7 @@
         private System.Windows.Forms.Button btn_istatistik;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.Button btn_emanetVer;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btn_Sepet;
         private System.Windows.Forms.Button Emanet;
     }
 }

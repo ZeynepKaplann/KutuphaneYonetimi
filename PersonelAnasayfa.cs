@@ -51,18 +51,7 @@ namespace KutuphaneYonetimSistemi
             this.Hide();
         }
 
-        private void btn_Sepet_Click(object sender, EventArgs e)
-        {
-            Sepetİslem sepetİslem = new Sepetİslem();
-            sepetİslem.ShowDialog();
-        }
-
-        private void btn_emanetTakip_Click(object sender, EventArgs e)
-        {
-            EmanetVer emanetVer = new EmanetVer();
-            emanetVer.Show();
-
-        }
+       
 
         private void Emanet_Click(object sender, EventArgs e)
         {
