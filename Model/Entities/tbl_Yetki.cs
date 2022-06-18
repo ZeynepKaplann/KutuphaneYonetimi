@@ -21,8 +21,8 @@ namespace KutuphaneYonetimSistemi.Model.Entities
         }
     
         public byte Id { get; set; }
-        public string YetkiAdi { get; set; }
         public Nullable<bool> Durum { get; set; }
+        public string YetkiAdi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Personel> tbl_Personel { get; set; }

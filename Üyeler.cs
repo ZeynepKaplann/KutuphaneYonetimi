@@ -13,7 +13,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class Üyeler : Form
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
 
 
         public Üyeler()
@@ -28,9 +28,9 @@ namespace KutuphaneYonetimSistemi
             var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true || u.Durum==false)
                                    .Select(s => new
                                    {
-                                       İd = s.Id,
-                                       Ad = s.UyeAdi,
-                                       Soyad = s.UyeSoyadi,
+                                       İd = s.İd,
+                                       Ad = s.ÜyeAdi,
+                                       Soyad = s.ÜyeSoyadi,
                                        Mail = s.Email,
                                        Tel = s.Telefon,
                                        Cins = s.Cinsiyet,
@@ -58,7 +58,7 @@ namespace KutuphaneYonetimSistemi
             var ara = from x in db.tbl_Uyeler select x;
             if (txtUyeAdSoyad.Text!=null)
             {
-                UyelerDTV.DataSource = ara.Where(x => x.UyeAdi.Contains(txtUyeAdSoyad.Text)).ToList();
+                UyelerDTV.DataSource = ara.Where(x => x.ÜyeAdi.Contains(txtUyeAdSoyad.Text)).ToList();
             }
         }
 

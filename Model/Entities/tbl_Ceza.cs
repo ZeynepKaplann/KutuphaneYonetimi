@@ -17,10 +17,10 @@ namespace KutuphaneYonetimSistemi.Model.Entities
         public int Id { get; set; }
         public Nullable<int> PersonelId { get; set; }
         public Nullable<int> KitapId { get; set; }
-        public Nullable<int> UyeId { get; set; }
+        public Nullable<int> KitapEmanetId { get; set; }
         public Nullable<int> GunSayisi { get; set; }
         public Nullable<decimal> CezaUcret { get; set; }
-        public Nullable<int> KitapEmanetId { get; set; }
+        public Nullable<int> UyeId { get; set; }
     
         public virtual tbl_KitapEmanet tbl_KitapEmanet { get; set; }
         public virtual tbl_Kitaplar tbl_Kitaplar { get; set; }

@@ -21,14 +21,14 @@ namespace KutuphaneYonetimSistemi.Model.Entities
             this.tbl_KitapEmanet = new HashSet<tbl_KitapEmanet>();
         }
     
-        public int Id { get; set; }
+        public int İd { get; set; }
+        public string KullaniciAdi { get; set; }
         public string PersonelAdi { get; set; }
         public string PersonelSoyadi { get; set; }
+        public string Adres { get; set; }
         public string Email { get; set; }
-        public string KullaniciAdi { get; set; }
         public string Sifre { get; set; }
         public Nullable<byte> Yetkisi { get; set; }
-        public string Adres { get; set; }
         public Nullable<bool> Durum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

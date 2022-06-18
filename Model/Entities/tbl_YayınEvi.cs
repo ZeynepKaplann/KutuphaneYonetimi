@@ -20,9 +20,9 @@ namespace KutuphaneYonetimSistemi.Model.Entities
             this.tbl_Kitaplar = new HashSet<tbl_Kitaplar>();
         }
     
-        public int Id { get; set; }
+        public int ıd { get; set; }
+        public Nullable<bool> Durum { get; set; }
         public string YayınEviAdi { get; set; }
-        public bool Durum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Kitaplar> tbl_Kitaplar { get; set; }

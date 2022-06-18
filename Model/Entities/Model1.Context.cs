@@ -13,10 +13,10 @@ namespace KutuphaneYonetimSistemi.Model.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class KutuphaneYonetimiEntities : DbContext
+    public partial class KutuphaneEntities : DbContext
     {
-        public KutuphaneYonetimiEntities()
-            : base("name=KutuphaneYonetimiEntities")
+        public KutuphaneEntities()
+            : base("name=KutuphaneEntities")
         {
         }
     

@@ -10,7 +10,7 @@ namespace KutuphaneYonetimSistemi.Model.Generic
 {
     public class Generic<T> where T : class,new()
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
         public List<T> List()
         {
             return db.Set<T>().ToList();

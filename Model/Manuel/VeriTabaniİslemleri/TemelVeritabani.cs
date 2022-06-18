@@ -20,7 +20,7 @@ namespace KutuphaneYonetimSistemi.Model.Manuel.VeriTabaniİslemleri
         public TemelVeritabani()
         {
             //Sql yolu
-            veriYolu = "Data Source=DESKTOP-L2IUGM8\\SQLEXPRESS05;Initial Catalog=KutuphaneYonetimi;" + "Integrated Security=true;";
+            veriYolu = "Data Source=DESKTOP-L2IUGM8\\SQLEXPRESS05;Initial Catalog=Kutuphane;" + "Integrated Security=true;";
         }
         public void Baglan()
         {

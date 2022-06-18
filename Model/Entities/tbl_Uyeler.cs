@@ -21,13 +21,13 @@ namespace KutuphaneYonetimSistemi.Model.Entities
             this.tbl_KitapEmanet = new HashSet<tbl_KitapEmanet>();
         }
     
-        public int Id { get; set; }
-        public string UyeAdi { get; set; }
-        public string UyeSoyadi { get; set; }
+        public int İd { get; set; }
+        public Nullable<bool> Durum { get; set; }
         public string Email { get; set; }
         public string Telefon { get; set; }
+        public string ÜyeAdi { get; set; }
+        public string ÜyeSoyadi { get; set; }
         public string Cinsiyet { get; set; }
-        public Nullable<bool> Durum { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Ceza> tbl_Ceza { get; set; }

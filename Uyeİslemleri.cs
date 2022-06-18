@@ -13,7 +13,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class Uyeİslemleri : Form
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
 
         public Uyeİslemleri()
         {
@@ -28,9 +28,9 @@ namespace KutuphaneYonetimSistemi
             var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true )
                                     .Select(s => new
                                     {
-                                        İd = s.Id,
-                                        Ad = s.UyeAdi,
-                                        Soyad = s.UyeSoyadi,
+                                        İd = s.İd,
+                                        Ad = s.ÜyeAdi,
+                                        Soyad = s.ÜyeSoyadi,
                                         Mail = s.Email,
                                         Tel = s.Telefon,
                                         Cins = s.Cinsiyet,
@@ -77,8 +77,8 @@ namespace KutuphaneYonetimSistemi
         {
            // Üye eklemek için 
             tbl_Uyeler UyeEkle = new tbl_Uyeler();
-            UyeEkle.UyeAdi = txt_UyeAdi.Text;
-            UyeEkle.UyeSoyadi = txt_UyeSoyad.Text;
+            UyeEkle.ÜyeAdi = txt_UyeAdi.Text;
+            UyeEkle.ÜyeSoyadi = txt_UyeSoyad.Text;
             UyeEkle.Email = txt_UyeEmail.Text;
             UyeEkle.Telefon = txtUyeTelefon.Text;
             UyeEkle.Cinsiyet = cbb_Cinsiyet.Text;
@@ -94,9 +94,9 @@ namespace KutuphaneYonetimSistemi
             // Güncellemek için(isme göre güncelliyorum)
            
             string ad = txt_UyeAdi.Text;
-            var guncelle = db.tbl_Uyeler.Where(w => w.UyeAdi == ad).FirstOrDefault();
-            guncelle.UyeAdi = txt_UyeAdi.Text;
-            guncelle.UyeSoyadi = txt_UyeSoyad.Text;
+            var guncelle = db.tbl_Uyeler.Where(w => w.ÜyeAdi == ad).FirstOrDefault();
+            guncelle.ÜyeAdi = txt_UyeAdi.Text;
+            guncelle.ÜyeSoyadi = txt_UyeSoyad.Text;
             guncelle.Email = txt_UyeEmail.Text;
             guncelle.Telefon = txtUyeTelefon.Text;
             guncelle.Durum = false;
@@ -109,7 +109,7 @@ namespace KutuphaneYonetimSistemi
         {
             //Silmek için(İsme göre siliyorum)
             string ad = UyeİslemDTV.CurrentRow.Cells[1].Value.ToString();
-            var sil = db.tbl_Uyeler.Where(w => w.UyeAdi == ad).FirstOrDefault();
+            var sil = db.tbl_Uyeler.Where(w => w.ÜyeAdi == ad).FirstOrDefault();
             db.tbl_Uyeler.Remove(sil);
             db.SaveChanges();
             Kontrol();

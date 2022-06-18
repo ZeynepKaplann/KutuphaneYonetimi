@@ -17,7 +17,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class Login : Form
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
         Temelİslem temelİslem = new Temelİslem();
 
         public Login()

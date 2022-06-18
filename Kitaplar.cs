@@ -13,7 +13,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class Kitaplar : Form
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
         public Kitaplar()
         {
             InitializeComponent();
@@ -26,12 +26,12 @@ namespace KutuphaneYonetimSistemi
             var kitaplariListele = db.tbl_Kitaplar.Where(k => k.Durumu == "A" || k.Durumu=="P" || k.Durumu=="O")
                                    .Select(s => new
                                    {
-                                       İd = s.Id,
+                                       İd = s.İd,
                                        Ad = s.KitapAdi,
                                        kategori = s.tbl_Kategori.KategoriAdi,
                                        yazar = s.tbl_Yazar.YazarAdi + " " + s.tbl_Yazar.YazarSoyadi,
                                        yayınevi = s.tbl_YayınEvi.YayınEviAdi,
-                                       sayfaSayısı = s.SayfaSayısı,
+                                       sayfaSayısı = s.SayfaSayisi,
                                        basımYılı = s.BasımYılı,
                                        adet = s.Adet,
                                        aciklama = s.Aciklama,

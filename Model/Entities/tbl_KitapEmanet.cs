@@ -27,7 +27,7 @@ namespace KutuphaneYonetimSistemi.Model.Entities
         public Nullable<System.DateTime> KitapAlisTarih { get; set; }
         public Nullable<System.DateTime> KitapTeslim { get; set; }
         public Nullable<int> PersonelId { get; set; }
-        public Nullable<bool> Durum { get; set; }
+        public Nullable<bool> Durumu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tbl_Ceza> tbl_Ceza { get; set; }

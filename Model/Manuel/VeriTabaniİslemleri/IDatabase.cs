@@ -10,7 +10,7 @@ namespace KutuphaneYonetimSistemi.Model.Manuel.VeriTabaniİslemleri
 {
     class IDatabase
     {
-        public static string connectionString = "Data Source=DESKTOP-L2IUGM8\\SQLEXPRESS05;Initial Catalog=KutuphaneYonetimi;" + "Integrated Security=true;";
+        public static string connectionString = "Data Source=DESKTOP-L2IUGM8\\SQLEXPRESS05;Initial Catalog=Kutuphane;" + "Integrated Security=true;";
         public static DataTable DataToDataTable(string query, List<SqlParameter> parameters)
         {
             try

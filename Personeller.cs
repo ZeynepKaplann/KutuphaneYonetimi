@@ -13,7 +13,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class Personeller : Form
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
         public Personeller()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace KutuphaneYonetimSistemi
             var personelListele = db.tbl_Personel.Where(p => p.Durum == true)
                           .Select(s => new
                           {
-                              İd = s.Id,
+                              İd = s.İd,
                               Ad = s.PersonelAdi,
                               Soyad = s.PersonelSoyadi,
                               Mail = s.Email,

@@ -14,7 +14,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class Emanet : Form
     {
-        KutuphaneYonetimiEntities db = new KutuphaneYonetimiEntities();
+        KutuphaneEntities db = new KutuphaneEntities();
         public Emanet()
         {
             InitializeComponent();
@@ -29,15 +29,15 @@ namespace KutuphaneYonetimSistemi
             var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true)
                                    .Select(s => new
                                    {
-                                       İd = s.Id,
-                                       Ad = s.UyeAdi,
-                                       Soyad = s.UyeSoyadi,
+                                       İd = s.İd,
+                                       Ad = s.ÜyeAdi,
+                                       Soyad = s.ÜyeSoyadi,
                                        Mail = s.Email,
                                        Tel = s.Telefon,
                                        Cins = s.Cinsiyet,
                                        UyeDurum = s.Durum
 
-                                   });
+                                   }) ;
 
             dataGridView_Uyeler.DataSource = uyeleriListele.ToList();
         }
@@ -50,12 +50,12 @@ namespace KutuphaneYonetimSistemi
             var kitaplariListele = db.tbl_Kitaplar.Where(k => k.Durumu == "A")
                           .Select(s => new
                           {
-                              İd = s.Id,
+                              İd = s.İd,
                               Ad = s.KitapAdi,
                               kategori = s.tbl_Kategori.KategoriAdi,
                               yazar = s.tbl_Yazar.YazarAdi + " " + s.tbl_Yazar.YazarSoyadi,
                               yayınevi = s.tbl_YayınEvi.YayınEviAdi,
-                              sayfaSayısı = s.SayfaSayısı,
+                              sayfaSayısı = s.SayfaSayisi,
                               basımYılı = s.BasımYılı,
                               adet = s.Adet,
                               aciklama = s.Aciklama,
@@ -95,7 +95,7 @@ namespace KutuphaneYonetimSistemi
             var ara = from x in db.tbl_Uyeler select x;
             if (UyeAra.Text != null)
             {
-                dataGridView_Uyeler.DataSource = ara.Where(x => x.UyeAdi.Contains(UyeAra.Text)).ToList();
+                dataGridView_Uyeler.DataSource = ara.Where(x => x.ÜyeAdi.Contains(UyeAra.Text)).ToList();
             }
 
         }
@@ -106,7 +106,7 @@ namespace KutuphaneYonetimSistemi
             var ara = from x in db.tbl_Uyeler select x;
             if (EmanetUyeİd.Text != null)
             {
-                dataGridView_Uyeler.DataSource = ara.Where(x => x.UyeAdi.Contains(EmanetUyeİd.Text)).ToList();
+                dataGridView_Uyeler.DataSource = ara.Where(x => x.ÜyeAdi.Contains(EmanetUyeİd.Text)).ToList();
             }
         }
 
@@ -123,7 +123,7 @@ namespace KutuphaneYonetimSistemi
                 kitapEmanet.KitapAlisTarih = DateTime.Parse(listView_Kitap.Items[i].SubItems[2].Text);
                 kitapEmanet.UyeId = int.Parse(EmanetUyeİd.Text);
                 kitapEmanet.KitapId = int.Parse(listView_Kitap.Items[i].SubItems[0].Text);
-                kitapEmanet.Durum = true;
+                kitapEmanet.Durumu = true;
                 
                 db.tbl_KitapEmanet.Add(kitapEmanet);
                 
@@ -151,7 +151,7 @@ namespace KutuphaneYonetimSistemi
         {
             //Kitabın id'sine göre arama
             int kitapid = int.Parse(EmanetKitapİd.Text);
-            tbl_Kitaplar kitaplar = db.tbl_Kitaplar.AsNoTracking().Where(k => k.Durumu == "A" && k.Id == kitapid).FirstOrDefault();
+            tbl_Kitaplar kitaplar = db.tbl_Kitaplar.AsNoTracking().Where(k => k.Durumu == "A" && k.İd == kitapid).FirstOrDefault();
             if(kitaplar != null)
             {
                 txt_KitapAdi.Text = kitaplar.KitapAdi;

@@ -126,7 +126,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Generic\Generic.cs" />
-    <Compile Include="Model\Manuel\Sinif\Login.cs" />
     <Compile Include="Model\Manuel\Sinif\Temelİslem.cs" />
     <Compile Include="Model\Manuel\VeriTabaniİslemleri\IDatabase.cs" />
     <Compile Include="Model\Manuel\VeriTabaniİslemleri\TemelVeritabani.cs" />
@@ -284,10 +283,13 @@
     <None Include="Resources\üyeler.png" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\Entities\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Model\Entities\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -295,9 +297,5 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
