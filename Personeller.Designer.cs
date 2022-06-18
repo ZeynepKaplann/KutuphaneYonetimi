@@ -80,6 +80,7 @@
             this.PersonnelerDTV.RowTemplate.Height = 24;
             this.PersonnelerDTV.Size = new System.Drawing.Size(962, 613);
             this.PersonnelerDTV.TabIndex = 1;
+            this.PersonnelerDTV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PersonnelerDTV_CellContentClick);
             // 
             // Personeller
             // 

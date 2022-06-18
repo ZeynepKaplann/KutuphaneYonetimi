@@ -25,8 +25,8 @@ namespace KutuphaneYonetimSistemi
         private void btn_Uyeİslem_Click(object sender, EventArgs e)
         {
             Uyeİslemleri uyeİslemleri = new Uyeİslemleri();
-            uyeİslemleri.Show();
-            this.Hide();
+            uyeİslemleri.ShowDialog();
+            
 
         }
 
@@ -38,8 +38,8 @@ namespace KutuphaneYonetimSistemi
         private void btn_üyeler_Click(object sender, EventArgs e)
         {
             Üyeler uyeler = new Üyeler();
-            uyeler.Show();
-            this.Hide();
+            uyeler.ShowDialog();
+            
         }
 
    
@@ -47,8 +47,8 @@ namespace KutuphaneYonetimSistemi
         private void btn_kitaplar_Click(object sender, EventArgs e)
         {
             Kitaplar kitaplar = new Kitaplar();
-            kitaplar.Show();
-            this.Hide();
+            kitaplar.ShowDialog();
+            
         }
 
        
@@ -57,6 +57,18 @@ namespace KutuphaneYonetimSistemi
         {
             Emanet emanet = new Emanet();
             emanet.ShowDialog();
+        }
+
+        private void btn_TeslimAl_Click(object sender, EventArgs e)
+        {
+            TeslimAlmaİslemleri teslimAlmaİslemleri = new TeslimAlmaİslemleri();
+            teslimAlmaİslemleri.ShowDialog();
+        }
+
+        private void btn_istatistik_Click(object sender, EventArgs e)
+        {
+            İstatistik istatistik = new İstatistik();
+            istatistik.ShowDialog();
         }
     }
 }

@@ -55,6 +55,10 @@ namespace KutuphaneYonetimSistemi
             this.Hide();
         }
 
-       
+        private void button_ist_Click(object sender, EventArgs e)
+        {
+            İstatistik istatistik = new İstatistik();
+            istatistik.Show();
+        }
     }
 }

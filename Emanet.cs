@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace KutuphaneYonetimSistemi
 {
     public partial class Emanet : Form
@@ -23,6 +24,8 @@ namespace KutuphaneYonetimSistemi
 
         private void uyeleriListele()
         {
+            //Üyeleri Listeler
+
             var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true)
                                    .Select(s => new
                                    {
@@ -41,6 +44,9 @@ namespace KutuphaneYonetimSistemi
 
         private void kitaplariListele()
         {
+            //Kitapları Listeler
+
+
             var kitaplariListele = db.tbl_Kitaplar.Where(k => k.Durumu == "A")
                           .Select(s => new
                           {
@@ -62,37 +68,102 @@ namespace KutuphaneYonetimSistemi
 
         private void Ara_TextChanged(object sender, EventArgs e)
         {
+            // Kitap Arama
             var ara = from x in db.tbl_Kitaplar select x;
-            if (Ara.Text != null)
+            if (Ara.Text != null )
             {
                 dataGridView_Kitap.DataSource = ara.Where(x => x.KitapAdi.Contains(Ara.Text)).ToList();
+                
             }
-        }
-
-        private void EmanetKitapİd_TextChanged(object sender, EventArgs e)
-        {
-            int KitapId = int.Parse(EmanetKitapİd.Text);
-            tbl_Kitaplar kitaplar = db.tbl_Kitaplar.AsNoTracking().Where(k => k.Durumu == "A" && k.Id == KitapId).FirstOrDefault();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string[] kitaplar = { EmanetKitapİd.Text, DateTime.Today.AddDays(20).ToString() };
-            listView_Kitap.Items.Add(new ListViewItem(kitaplar));
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            
         }
 
        
 
-    
 
+        
 
-        private void listView_Kitap_SelectedIndexChanged(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+        }
+
+        private void UyeAra_TextChanged(object sender, EventArgs e)
+        {
+            //Üye Arama
+
+            var ara = from x in db.tbl_Uyeler select x;
+            if (UyeAra.Text != null)
+            {
+                dataGridView_Uyeler.DataSource = ara.Where(x => x.UyeAdi.Contains(UyeAra.Text)).ToList();
+            }
+
+        }
+
+        private void EmanetUyeİd_TextChanged(object sender, EventArgs e)
+        {
+            //Üye İdye göre üye seçme
+            var ara = from x in db.tbl_Uyeler select x;
+            if (EmanetUyeİd.Text != null)
+            {
+                dataGridView_Uyeler.DataSource = ara.Where(x => x.UyeAdi.Contains(EmanetUyeİd.Text)).ToList();
+            }
+        }
+
+        private void btn_EmanetVer_Click(object sender, EventArgs e)
+        {
+            // Emanet verme işlemleri
+            for (int i = 0; i < listView_Kitap.Items.Count; i++)
+            {
+                int id = int.Parse(EmanetUyeİd.Text);
+                
+                    
+                tbl_KitapEmanet kitapEmanet = new tbl_KitapEmanet();
+                kitapEmanet.KitapVerilisTarih = DateTime.Now;
+                kitapEmanet.KitapAlisTarih = DateTime.Parse(listView_Kitap.Items[i].SubItems[2].Text);
+                kitapEmanet.UyeId = int.Parse(EmanetUyeİd.Text);
+                kitapEmanet.KitapId = int.Parse(listView_Kitap.Items[i].SubItems[0].Text);
+                kitapEmanet.Durum = true;
+                
+                db.tbl_KitapEmanet.Add(kitapEmanet);
+                
+                db.SaveChanges();
+                DurumuGüncelle(kitapEmanet.KitapId);
+                MessageBox.Show("Kitap emanet verildi");
+              
+            }
+
+
+
+        }
+
+        private void DurumuGüncelle(int? kitapId)
+        {
+            // Emanet verilen kitabın durumunu güncelleme
+            tbl_Kitaplar kitaplar = db.tbl_Kitaplar.Find(kitapId);
+            kitaplar.Durumu = "O";
+            db.SaveChanges();
+
+            
+        }
+
+        private void EmanetKitapİd_TextChanged_1(object sender, EventArgs e)
+        {
+            //Kitabın id'sine göre arama
+            int kitapid = int.Parse(EmanetKitapİd.Text);
+            tbl_Kitaplar kitaplar = db.tbl_Kitaplar.AsNoTracking().Where(k => k.Durumu == "A" && k.Id == kitapid).FirstOrDefault();
+            if(kitaplar != null)
+            {
+                txt_KitapAdi.Text = kitaplar.KitapAdi;
+            }
+
+        }
+
+        private void kitapEkle_Click(object sender, EventArgs e)
+        {
+            //Sepete ekelenen kitap
+            string[] kitap = { EmanetKitapİd.Text, txt_KitapAdi.Text, DateTime.Today.AddDays(20).ToString() };
+            listView_Kitap.Items.Add(new ListViewItem(kitap));
 
         }
 
@@ -101,59 +172,9 @@ namespace KutuphaneYonetimSistemi
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            var ara = from x in db.tbl_Uyeler select x;
-            if (textBox2.Text != null)
-            {
-                dataGridView_Uyeler.DataSource = ara.Where(x => x.UyeAdi.Contains(textBox2.Text)).ToList();
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            int id = int.Parse(textBox1.Text);
-            tbl_Uyeler uyeler = db.tbl_Uyeler.AsNoTracking().FirstOrDefault(k => (k.Id == id) && k.Durum == true);
-        }
-
-     
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            for (int i = 0; i < listView_Kitap.Items.Count; i++)
-
-            {
-                int id = int.Parse(textBox1.Text);
-                tbl_KitapEmanet kitapEmanet = new tbl_KitapEmanet();
-                kitapEmanet.KitapVerilisTarih = DateTime.Now;
-                kitapEmanet.KitapAlisTarih = DateTime.Parse(listView_Kitap.Items[i].SubItems[1].Text);
-                kitapEmanet.UyeId = int.Parse(textBox1.Text);
-                kitapEmanet.KitapId = int.Parse(listView_Kitap.Items[i].SubItems[0].Text);
-                kitapEmanet.Durum = true;
-                db.tbl_KitapEmanet.Add(kitapEmanet);
-                
-                db.SaveChanges();
-                
-                
-
-            }
-        }
-
-        
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-            var ara = from x in db.tbl_Uyeler select x;
-            if (textBox1.Text != null)
-            {
-                dataGridView_Uyeler.DataSource = ara.Where(x => x.UyeAdi.Contains(textBox1.Text)).ToList();
-            }
-
-
-        }
-                 
-        }
+ 
     }
+
+
+}
 

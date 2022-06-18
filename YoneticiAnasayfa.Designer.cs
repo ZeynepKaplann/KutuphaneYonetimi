@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -40,11 +39,9 @@
             this.btn_Kitapİslem = new System.Windows.Forms.Button();
             this.btn_Kitap = new System.Windows.Forms.Button();
             this.btnUyeler = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.button_ist = new System.Windows.Forms.Button();
             this.btn_Personeller = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -86,20 +83,10 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::KutuphaneYonetimSistemi.Properties.Resources.profil;
-            this.pictureBox6.Location = new System.Drawing.Point(884, 498);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(222, 196);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 6;
-            this.pictureBox6.TabStop = false;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::KutuphaneYonetimSistemi.Properties.Resources.üyeler;
-            this.pictureBox5.Location = new System.Drawing.Point(502, 498);
+            this.pictureBox5.Location = new System.Drawing.Point(734, 498);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(242, 196);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,7 +96,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::KutuphaneYonetimSistemi.Properties.Resources.istatistik;
-            this.pictureBox4.Location = new System.Drawing.Point(102, 498);
+            this.pictureBox4.Location = new System.Drawing.Point(252, 498);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(245, 196);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -185,25 +172,25 @@
             this.btnUyeler.UseVisualStyleBackColor = false;
             this.btnUyeler.Click += new System.EventHandler(this.btnUyeler_Click);
             // 
-            // button5
+            // button_ist
             // 
-            this.button5.BackColor = System.Drawing.Color.Teal;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.Location = new System.Drawing.Point(125, 722);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(189, 49);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "İstatistik";
-            this.button5.UseVisualStyleBackColor = false;
-      
+            this.button_ist.BackColor = System.Drawing.Color.Teal;
+            this.button_ist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_ist.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button_ist.Location = new System.Drawing.Point(284, 725);
+            this.button_ist.Name = "button_ist";
+            this.button_ist.Size = new System.Drawing.Size(189, 49);
+            this.button_ist.TabIndex = 10;
+            this.button_ist.Text = "İstatistik";
+            this.button_ist.UseVisualStyleBackColor = false;
+            this.button_ist.Click += new System.EventHandler(this.button_ist_Click);
             // 
             // btn_Personeller
             // 
             this.btn_Personeller.BackColor = System.Drawing.Color.Teal;
             this.btn_Personeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Personeller.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Personeller.Location = new System.Drawing.Point(536, 722);
+            this.btn_Personeller.Location = new System.Drawing.Point(772, 712);
             this.btn_Personeller.Name = "btn_Personeller";
             this.btn_Personeller.Size = new System.Drawing.Size(167, 49);
             this.btn_Personeller.TabIndex = 11;
@@ -211,31 +198,17 @@
             this.btn_Personeller.UseVisualStyleBackColor = false;
             this.btn_Personeller.Click += new System.EventHandler(this.btn_Personeller_Click);
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Teal;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button7.Location = new System.Drawing.Point(914, 721);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(170, 50);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "Profil";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // YoneticiAnasayfa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1211, 824);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.btn_Personeller);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button_ist);
             this.Controls.Add(this.btnUyeler);
             this.Controls.Add(this.btn_Kitap);
             this.Controls.Add(this.btn_Kitapİslem);
-            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -247,7 +220,6 @@
             this.Load += new System.EventHandler(this.YoneticiAnasayfa_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -267,12 +239,10 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btn_Kitapİslem;
         private System.Windows.Forms.Button btn_Kitap;
         private System.Windows.Forms.Button btnUyeler;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button_ist;
         private System.Windows.Forms.Button btn_Personeller;
-        private System.Windows.Forms.Button button7;
     }
 }

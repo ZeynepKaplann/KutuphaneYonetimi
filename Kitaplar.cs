@@ -22,7 +22,8 @@ namespace KutuphaneYonetimSistemi
 
         private void KitaplarıListele()
         {
-            var kitaplariListele = db.tbl_Kitaplar.Where(k => k.Durumu == "A")
+            //Kitapları Listeleme
+            var kitaplariListele = db.tbl_Kitaplar.Where(k => k.Durumu == "A" || k.Durumu=="P" || k.Durumu=="O")
                                    .Select(s => new
                                    {
                                        İd = s.Id,
@@ -60,6 +61,7 @@ namespace KutuphaneYonetimSistemi
 
         private void txt_KitapArama_TextChanged(object sender, EventArgs e)
         {
+            //Kitap Adına göre arama
             var ara = from x in db.tbl_Kitaplar select x;
             if (txt_KitapArama.Text != null)
             {

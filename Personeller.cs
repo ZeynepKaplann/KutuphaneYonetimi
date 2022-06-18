@@ -22,6 +22,7 @@ namespace KutuphaneYonetimSistemi
 
         private void PersonelleriListele()
         {
+            //Personelleri Listeleme
             var personelListele = db.tbl_Personel.Where(p => p.Durum == true)
                           .Select(s => new
                           {
@@ -49,6 +50,11 @@ namespace KutuphaneYonetimSistemi
         private void button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PersonnelerDTV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

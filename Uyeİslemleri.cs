@@ -21,8 +21,10 @@ namespace KutuphaneYonetimSistemi
             UyeleriListele();
         }
 
-        private void UyeleriListele()  //Eklediğim üyeleri DataGridView'de görüntülemek için.
+        private void UyeleriListele()  
         {
+            //Üyeleri Listleme
+
             var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true )
                                     .Select(s => new
                                     {
@@ -32,7 +34,7 @@ namespace KutuphaneYonetimSistemi
                                         Mail = s.Email,
                                         Tel = s.Telefon,
                                         Cins = s.Cinsiyet,
-                                        UyeDurum = s.Durum
+                                        UyeDurum = s.Durum==true ? "Aktif":"Pasif"
 
                                     }) ;
             

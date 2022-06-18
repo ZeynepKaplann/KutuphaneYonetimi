@@ -43,35 +43,55 @@ namespace KutuphaneYonetimSistemi
 
         private void btn_GirisYap_Click(object sender, EventArgs e)
         {
-
             tbl_Personel prs = db.tbl_Personel.Where(p => p.KullaniciAdi == txt_KullaniciAdi.Text && p.Sifre == txt_Parola.Text).FirstOrDefault();
-            // Personel tablosundaki bilgilerin girilen bilgilerle aynı olup olmadığını kontrol eden kod.
-               
-
-                if (prs.Yetkisi == 1)
-                {
-                    //Bilgiler doğruysa giriş yapılır
-
-                    BeniHatirla();
-                    YoneticiAnasayfa personelAnasayfa = new YoneticiAnasayfa();
-                    personelAnasayfa.ShowDialog();
-                    this.Hide();
-
-
-                }
-                if (prs.Yetkisi == 2)
+                // Personel tablosundaki bilgilerin girilen bilgilerle aynı olup olmadığını kontrol eden kod.
+            try
+            {
+                if (prs != null)
+                    
                 {
                     BeniHatirla();
-                    PersonelAnasayfa personel = new PersonelAnasayfa();
-                    personel.ShowDialog();
-                    this.Hide();
+                    
+                    if (prs.Yetkisi == 1) //Yetkisi 1 ise yönetici
+                        
+                    {
+                        YoneticiAnasayfa yoneticiAnasayfa = new YoneticiAnasayfa();
+                        yoneticiAnasayfa.ShowDialog();
+                        this.Hide();
+                       
+                        
+                    }
+                    if (prs.Yetkisi == 2) //Yetkisi 2 ise personel
+                        
+                    {
+                        PersonelAnasayfa personelAnasayfa = new PersonelAnasayfa();
+                        personelAnasayfa.ShowDialog();
+                        this.Hide();
+                        
+                        
+                    }
                 }
-                //else
-                //{
-                //    MessageBox.Show("Hatali giris", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                else
+                {
+                    MessageBox.Show("Kullanıcı yok", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
+            catch (Exception hata)
+            {
+
+                MessageBox.Show("beklenmeyen hata", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+                
+
+
+               
+
+            }
+           
+
+
+        
 
 
 

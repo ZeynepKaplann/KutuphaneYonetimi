@@ -98,22 +98,34 @@ namespace KutuphaneYonetimSistemi
 
         private void btnKitapEkle_Click(object sender, EventArgs e)
         {
-           
-                // kitap eklemek için(Üye işlemleri ile aynı mantıkta yapTım ama hata 
-                //alıyorum nedenini bulamadım)
-              tbl_Kitaplar kitaplar = new tbl_Kitaplar();
-                kitaplar.KitapAdi = txtKitapAdi.Text;
-                
-                
-                kitaplar.tbl_YayınEvi.YayınEviAdi = cbbYayinevi.Text;
-                kitaplar.SayfaSayısı = short.Parse(txtSayfaSayisi.Text);
-                kitaplar.BasımYılı = txtBasimYili.Text;
-                kitaplar.Adet = short.Parse(txtAdet.Text);
-                kitaplar.Aciklama = txtAciklama.Text;
-                
-                db.tbl_Kitaplar.Add(kitaplar);
-                db.SaveChanges();
-                Kontrol();
+            
+
+            tbl_Kitaplar kitaplar = new tbl_Kitaplar();
+            kitaplar.KitapAdi = txtKitapAdi.Text;
+            kitaplar.Yazar = Convert.ToInt32(cbbYazar.SelectedIndex + 1);
+            int yazarid = Convert.ToInt32(cbbYazar.SelectedIndex + 1);
+            kitaplar.tbl_Yazar = db.tbl_Yazar.FirstOrDefault(x => x.Id == yazarid);
+            kitaplar.Kategori = (byte?)(cbb_Kategori.SelectedIndex + 1);
+            byte kategoriid = (byte)(cbb_Kategori.SelectedIndex + 1);
+            kitaplar.tbl_Kategori = db.tbl_Kategori.FirstOrDefault(x => x.Id == kategoriid);
+            kitaplar.YayınEvi = cbbYayinevi.SelectedIndex + 1;
+            int yayineviid = cbb_Kategori.SelectedIndex + 1;
+            kitaplar.tbl_YayınEvi = db.tbl_YayınEvi.FirstOrDefault(x => x.Id == yayineviid);
+            kitaplar.SayfaSayısı = Convert.ToInt16(txtSayfaSayisi.Text);
+            kitaplar.BasımYılı = txtBasimYili.Text;
+            kitaplar.Adet = Convert.ToInt16(txtAdet.Text);
+            kitaplar.Durumu = "A";
+            kitaplar.Aciklama = txtAciklama.Text;
+           // kitaplar.YayınEvi = int.Parse(cbbYayinevi.Text);
+            kitaplar.tbl_YayınEvi = db.tbl_YayınEvi.Find(int.Parse(cbbYayinevi.SelectedValue.ToString()));
+            KitaplariListele();
+
+
+
+
+            db.tbl_Kitaplar.Add(kitaplar);
+             db.SaveChanges();
+              
             
         
 

@@ -24,7 +24,8 @@ namespace KutuphaneYonetimSistemi
 
         private void UyeleriListele()
         {
-            var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true)
+            //Üyeleri Listeleme
+            var uyeleriListele = db.tbl_Uyeler.Where(u => u.Durum == true || u.Durum==false)
                                    .Select(s => new
                                    {
                                        İd = s.Id,
@@ -53,6 +54,7 @@ namespace KutuphaneYonetimSistemi
 
         private void txtUyeAdSoyad_TextChanged(object sender, EventArgs e)
         {
+            //İsme göre üye arama
             var ara = from x in db.tbl_Uyeler select x;
             if (txtUyeAdSoyad.Text!=null)
             {
