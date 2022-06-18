@@ -98,34 +98,16 @@ namespace KutuphaneYonetimSistemi
 
         private void btnKitapEkle_Click(object sender, EventArgs e)
         {
-            
-
             tbl_Kitaplar kitaplar = new tbl_Kitaplar();
             kitaplar.KitapAdi = txtKitapAdi.Text;
-            kitaplar.Yazar = Convert.ToInt32(cbbYazar.SelectedIndex + 1);
-            int yazarid = Convert.ToInt32(cbbYazar.SelectedIndex + 1);
-            kitaplar.tbl_Yazar = db.tbl_Yazar.FirstOrDefault(x => x.Id == yazarid);
-            kitaplar.Kategori = (byte?)(cbb_Kategori.SelectedIndex + 1);
-            byte kategoriid = (byte)(cbb_Kategori.SelectedIndex + 1);
-            kitaplar.tbl_Kategori = db.tbl_Kategori.FirstOrDefault(x => x.Id == kategoriid);
-            kitaplar.YayınEvi = cbbYayinevi.SelectedIndex + 1;
-            int yayineviid = cbb_Kategori.SelectedIndex + 1;
-            kitaplar.tbl_YayınEvi = db.tbl_YayınEvi.FirstOrDefault(x => x.Id == yayineviid);
-            kitaplar.SayfaSayısı = Convert.ToInt16(txtSayfaSayisi.Text);
-            kitaplar.BasımYılı = txtBasimYili.Text;
-            kitaplar.Adet = Convert.ToInt16(txtAdet.Text);
             kitaplar.Durumu = "A";
             kitaplar.Aciklama = txtAciklama.Text;
-           // kitaplar.YayınEvi = int.Parse(cbbYayinevi.Text);
+            kitaplar.SayfaSayısı = short.Parse(txtSayfaSayisi.Text);
+            kitaplar.BasımYılı = txtBasimYili.Text;
+            kitaplar.tbl_Yazar = db.tbl_Yazar.Find(int.Parse(cbb_Kategori.SelectedValue.ToString()));
             kitaplar.tbl_YayınEvi = db.tbl_YayınEvi.Find(int.Parse(cbbYayinevi.SelectedValue.ToString()));
-            KitaplariListele();
+            kitaplar.tbl_Kategori = db.tbl_Kategori.Find(int.Parse(cbb_Kategori.SelectedValue.ToString()));
 
-
-
-
-            db.tbl_Kitaplar.Add(kitaplar);
-             db.SaveChanges();
-              
             
         
 
@@ -139,7 +121,7 @@ namespace KutuphaneYonetimSistemi
             var guncelle = db.tbl_Kitaplar.Where(w => w.KitapAdi == ad).FirstOrDefault();
             guncelle.KitapAdi = txtKitapAdi.Text;
             guncelle.SayfaSayısı = short.Parse(txtSayfaSayisi.Text);
-            //guncelle.BasımYılı = txtBasimYili.Text;
+            guncelle.BasımYılı = txtBasimYili.Text;
             guncelle.Adet = short.Parse(txtAdet.Text);
             guncelle.tbl_Yazar= db.tbl_Yazar.Find(int.Parse(cbbYazar.SelectedValue.ToString()));
             guncelle.tbl_YayınEvi= db.tbl_YayınEvi.Find(int.Parse(cbbYayinevi.SelectedValue.ToString()));
