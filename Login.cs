@@ -43,7 +43,7 @@ namespace KutuphaneYonetimSistemi
 
         private void btn_GirisYap_Click(object sender, EventArgs e)
         {
-            tbl_Personel prs = db.tbl_Personel.Where(p => p.KullaniciAdi == txt_KullaniciAdi.Text && p.Sifre == txt_Parola.Text).FirstOrDefault();
+            tbl_Personel prs = db.tbl_Personel.Where(p => p.KullaniciAdi == txt_KullaniciAdi.Text || p.Email==txt_KullaniciAdi.Text && p.Sifre == txt_Parola.Text).FirstOrDefault();
                 // Personel tablosundaki bilgilerin girilen bilgilerle aynı olup olmadığını kontrol eden kod.
             try
             {

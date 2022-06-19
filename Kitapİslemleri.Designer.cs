@@ -39,7 +39,7 @@
             this.btn_KitapGuncelle = new System.Windows.Forms.Button();
             this.btnKitapEkle = new System.Windows.Forms.Button();
             this.txtAciklama = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_Basim = new System.Windows.Forms.TextBox();
             this.txtAdet = new System.Windows.Forms.TextBox();
             this.txtSayfaSayisi = new System.Windows.Forms.TextBox();
             this.cbbYazar = new System.Windows.Forms.ComboBox();
@@ -47,7 +47,6 @@
             this.cbb_Kategori = new System.Windows.Forms.ComboBox();
             this.txtKitapAdi = new System.Windows.Forms.TextBox();
             this.labelAciklama = new System.Windows.Forms.Label();
-            this.txtBasimYili = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelSayfaSayisi = new System.Windows.Forms.Label();
             this.labelYazar = new System.Windows.Forms.Label();
@@ -57,6 +56,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.KitapİslemDTV = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,6 +100,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.cbbDurum);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btn_Temizleme);
@@ -107,7 +108,7 @@
             this.panel2.Controls.Add(this.btn_KitapGuncelle);
             this.panel2.Controls.Add(this.btnKitapEkle);
             this.panel2.Controls.Add(this.txtAciklama);
-            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBox_Basim);
             this.panel2.Controls.Add(this.txtAdet);
             this.panel2.Controls.Add(this.txtSayfaSayisi);
             this.panel2.Controls.Add(this.cbbYazar);
@@ -115,7 +116,6 @@
             this.panel2.Controls.Add(this.cbb_Kategori);
             this.panel2.Controls.Add(this.txtKitapAdi);
             this.panel2.Controls.Add(this.labelAciklama);
-            this.panel2.Controls.Add(this.txtBasimYili);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.labelSayfaSayisi);
             this.panel2.Controls.Add(this.labelYazar);
@@ -134,7 +134,7 @@
             this.cbbDurum.Items.AddRange(new object[] {
             "A",
             "P"});
-            this.cbbDurum.Location = new System.Drawing.Point(171, 401);
+            this.cbbDurum.Location = new System.Drawing.Point(172, 410);
             this.cbbDurum.Name = "cbbDurum";
             this.cbbDurum.Size = new System.Drawing.Size(216, 24);
             this.cbbDurum.TabIndex = 24;
@@ -143,7 +143,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(84, 401);
+            this.label3.Location = new System.Drawing.Point(84, 410);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 23;
@@ -154,7 +154,7 @@
             this.btn_Temizleme.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btn_Temizleme.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Temizleme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_Temizleme.Location = new System.Drawing.Point(145, 628);
+            this.btn_Temizleme.Location = new System.Drawing.Point(165, 638);
             this.btn_Temizleme.Name = "btn_Temizleme";
             this.btn_Temizleme.Size = new System.Drawing.Size(162, 66);
             this.btn_Temizleme.TabIndex = 22;
@@ -167,7 +167,7 @@
             this.btn_KitapSil.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btn_KitapSil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_KitapSil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_KitapSil.Location = new System.Drawing.Point(317, 543);
+            this.btn_KitapSil.Location = new System.Drawing.Point(312, 561);
             this.btn_KitapSil.Name = "btn_KitapSil";
             this.btn_KitapSil.Size = new System.Drawing.Size(117, 66);
             this.btn_KitapSil.TabIndex = 20;
@@ -180,7 +180,7 @@
             this.btn_KitapGuncelle.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btn_KitapGuncelle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_KitapGuncelle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_KitapGuncelle.Location = new System.Drawing.Point(165, 544);
+            this.btn_KitapGuncelle.Location = new System.Drawing.Point(171, 562);
             this.btn_KitapGuncelle.Name = "btn_KitapGuncelle";
             this.btn_KitapGuncelle.Size = new System.Drawing.Size(127, 65);
             this.btn_KitapGuncelle.TabIndex = 19;
@@ -193,7 +193,7 @@
             this.btnKitapEkle.BackColor = System.Drawing.Color.LightSteelBlue;
             this.btnKitapEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKitapEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnKitapEkle.Location = new System.Drawing.Point(24, 544);
+            this.btnKitapEkle.Location = new System.Drawing.Point(13, 562);
             this.btnKitapEkle.Name = "btnKitapEkle";
             this.btnKitapEkle.Size = new System.Drawing.Size(122, 65);
             this.btnKitapEkle.TabIndex = 18;
@@ -203,22 +203,22 @@
             // 
             // txtAciklama
             // 
-            this.txtAciklama.Location = new System.Drawing.Point(171, 440);
+            this.txtAciklama.Location = new System.Drawing.Point(171, 451);
             this.txtAciklama.Multiline = true;
             this.txtAciklama.Name = "txtAciklama";
             this.txtAciklama.Size = new System.Drawing.Size(216, 86);
             this.txtAciklama.TabIndex = 17;
             // 
-            // textBox5
+            // textBox_Basim
             // 
-            this.textBox5.Location = new System.Drawing.Point(171, 364);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(216, 22);
-            this.textBox5.TabIndex = 16;
+            this.textBox_Basim.Location = new System.Drawing.Point(172, 329);
+            this.textBox_Basim.Name = "textBox_Basim";
+            this.textBox_Basim.Size = new System.Drawing.Size(216, 22);
+            this.textBox_Basim.TabIndex = 16;
             // 
             // txtAdet
             // 
-            this.txtAdet.Location = new System.Drawing.Point(171, 327);
+            this.txtAdet.Location = new System.Drawing.Point(172, 366);
             this.txtAdet.Name = "txtAdet";
             this.txtAdet.Size = new System.Drawing.Size(216, 22);
             this.txtAdet.TabIndex = 15;
@@ -233,7 +233,7 @@
             // cbbYazar
             // 
             this.cbbYazar.FormattingEnabled = true;
-            this.cbbYazar.Location = new System.Drawing.Point(171, 249);
+            this.cbbYazar.Location = new System.Drawing.Point(171, 201);
             this.cbbYazar.Name = "cbbYazar";
             this.cbbYazar.Size = new System.Drawing.Size(216, 24);
             this.cbbYazar.TabIndex = 14;
@@ -241,7 +241,7 @@
             // cbbYayinevi
             // 
             this.cbbYayinevi.FormattingEnabled = true;
-            this.cbbYayinevi.Location = new System.Drawing.Point(171, 212);
+            this.cbbYayinevi.Location = new System.Drawing.Point(171, 249);
             this.cbbYayinevi.Name = "cbbYayinevi";
             this.cbbYayinevi.Size = new System.Drawing.Size(216, 24);
             this.cbbYayinevi.TabIndex = 13;
@@ -249,14 +249,14 @@
             // cbb_Kategori
             // 
             this.cbb_Kategori.FormattingEnabled = true;
-            this.cbb_Kategori.Location = new System.Drawing.Point(171, 173);
+            this.cbb_Kategori.Location = new System.Drawing.Point(171, 158);
             this.cbb_Kategori.Name = "cbb_Kategori";
             this.cbb_Kategori.Size = new System.Drawing.Size(216, 24);
             this.cbb_Kategori.TabIndex = 12;
             // 
             // txtKitapAdi
             // 
-            this.txtKitapAdi.Location = new System.Drawing.Point(171, 136);
+            this.txtKitapAdi.Location = new System.Drawing.Point(171, 115);
             this.txtKitapAdi.Name = "txtKitapAdi";
             this.txtKitapAdi.Size = new System.Drawing.Size(216, 22);
             this.txtKitapAdi.TabIndex = 11;
@@ -266,27 +266,17 @@
             // 
             this.labelAciklama.AutoSize = true;
             this.labelAciklama.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelAciklama.Location = new System.Drawing.Point(65, 465);
+            this.labelAciklama.Location = new System.Drawing.Point(65, 477);
             this.labelAciklama.Name = "labelAciklama";
             this.labelAciklama.Size = new System.Drawing.Size(94, 24);
             this.labelAciklama.TabIndex = 9;
             this.labelAciklama.Text = "Açıklama";
             // 
-            // txtBasimYili
-            // 
-            this.txtBasimYili.AutoSize = true;
-            this.txtBasimYili.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtBasimYili.Location = new System.Drawing.Point(59, 364);
-            this.txtBasimYili.Name = "txtBasimYili";
-            this.txtBasimYili.Size = new System.Drawing.Size(100, 24);
-            this.txtBasimYili.TabIndex = 8;
-            this.txtBasimYili.Text = "Basım Yılı";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label9.Location = new System.Drawing.Point(106, 327);
+            this.label9.Location = new System.Drawing.Point(106, 364);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 24);
             this.label9.TabIndex = 7;
@@ -306,17 +296,18 @@
             // 
             this.labelYazar.AutoSize = true;
             this.labelYazar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelYazar.Location = new System.Drawing.Point(97, 247);
+            this.labelYazar.Location = new System.Drawing.Point(97, 199);
             this.labelYazar.Name = "labelYazar";
             this.labelYazar.Size = new System.Drawing.Size(62, 24);
             this.labelYazar.TabIndex = 5;
             this.labelYazar.Text = "Yazar";
+            this.labelYazar.Click += new System.EventHandler(this.labelYazar_Click);
             // 
             // labelYayinevi
             // 
             this.labelYayinevi.AutoSize = true;
             this.labelYayinevi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelYayinevi.Location = new System.Drawing.Point(71, 212);
+            this.labelYayinevi.Location = new System.Drawing.Point(72, 249);
             this.labelYayinevi.Name = "labelYayinevi";
             this.labelYayinevi.Size = new System.Drawing.Size(88, 24);
             this.labelYayinevi.TabIndex = 4;
@@ -326,7 +317,7 @@
             // 
             this.labelKategori.AutoSize = true;
             this.labelKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelKategori.Location = new System.Drawing.Point(72, 173);
+            this.labelKategori.Location = new System.Drawing.Point(73, 158);
             this.labelKategori.Name = "labelKategori";
             this.labelKategori.Size = new System.Drawing.Size(87, 24);
             this.labelKategori.TabIndex = 3;
@@ -336,7 +327,7 @@
             // 
             this.labelKitapAd.AutoSize = true;
             this.labelKitapAd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.labelKitapAd.Location = new System.Drawing.Point(66, 134);
+            this.labelKitapAd.Location = new System.Drawing.Point(66, 115);
             this.labelKitapAd.Name = "labelKitapAd";
             this.labelKitapAd.Size = new System.Drawing.Size(93, 24);
             this.labelKitapAd.TabIndex = 2;
@@ -376,6 +367,16 @@
             this.KitapİslemDTV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KitapİslemDTV_CellContentClick);
             this.KitapİslemDTV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.KitapİslemDTV_CellDoubleClick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(59, 327);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 24);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Basım Yılı";
+            // 
             // Kitapİslemleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -408,7 +409,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labelAciklama;
-        private System.Windows.Forms.Label txtBasimYili;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label labelSayfaSayisi;
         private System.Windows.Forms.Label labelYazar;
@@ -421,7 +421,7 @@
         private System.Windows.Forms.Button btn_KitapGuncelle;
         private System.Windows.Forms.Button btnKitapEkle;
         private System.Windows.Forms.TextBox txtAciklama;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_Basim;
         private System.Windows.Forms.TextBox txtAdet;
         private System.Windows.Forms.TextBox txtSayfaSayisi;
         private System.Windows.Forms.ComboBox cbbYazar;
@@ -431,5 +431,6 @@
         private System.Windows.Forms.ComboBox cbbDurum;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView KitapİslemDTV;
+        private System.Windows.Forms.Label label4;
     }
 }

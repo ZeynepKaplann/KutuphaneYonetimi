@@ -1,4 +1,5 @@
-﻿using KutuphaneYonetimSistemi.Model.Manuel.VeriTabaniİslemleri;
+﻿using KutuphaneYonetimSistemi.Model.Entities;
+using KutuphaneYonetimSistemi.Model.Manuel.VeriTabaniİslemleri;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace KutuphaneYonetimSistemi
 {
     public partial class İstatistik : Form
     {
+        KutuphaneEntities db = new KutuphaneEntities();
         public İstatistik()
         {
             InitializeComponent();
@@ -43,12 +45,15 @@ namespace KutuphaneYonetimSistemi
                 series.Points.Clear();
 
             }
-            foreach (DataRow row in IDatabase.DataToDataTable(query).Rows)
-            {
-                chart.Series["Durum"].Points.AddXY(row["X"].ToString(), row["Y"].ToString());
+            //foreach (DataRow row in IDatabase.DataToDataTable(query).Rows)
+            //{
+            //    chart.Series["Durum"].Points.AddXY(row["X"].ToString(), row["Y"].ToString());
 
-            }
+            //}
+            var x = db.Database.SqlQuery<List<string[]>>(query).ToList();
+            
         }
+
 
       
      

@@ -53,15 +53,15 @@
             <PropertyRef Name="İd" />
           </Key>
           <Property Name="İd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
-          <Property Name="Adet" Type="smallint" />
-          <Property Name="Durumu" Type="char" MaxLength="1" />
+          <Property Name="KitapAdi" Type="nvarchar" MaxLength="50" />
           <Property Name="Kategori" Type="tinyint" />
           <Property Name="Yazar" Type="int" />
           <Property Name="Yayınevi" Type="int" />
-          <Property Name="KitapAdi" Type="nvarchar" MaxLength="50" />
           <Property Name="SayfaSayisi" Type="smallint" />
           <Property Name="BasımYılı" Type="char" MaxLength="4" />
+          <Property Name="Adet" Type="smallint" />
+          <Property Name="Durumu" Type="char" MaxLength="1" />
+          <Property Name="Aciklama" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="tbl_Personel">
           <Key>
@@ -82,12 +82,12 @@
             <PropertyRef Name="İd" />
           </Key>
           <Property Name="İd" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Durum" Type="bit" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
-          <Property Name="Telefon" Type="varchar" MaxLength="11" />
           <Property Name="ÜyeAdi" Type="nvarchar" MaxLength="50" />
           <Property Name="ÜyeSoyadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Telefon" Type="varchar" MaxLength="11" />
           <Property Name="Cinsiyet" Type="char" MaxLength="1" />
+          <Property Name="Durum" Type="bit" />
         </EntityType>
         <EntityType Name="tbl_YayınEvi">
           <Key>

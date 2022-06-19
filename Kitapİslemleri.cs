@@ -56,33 +56,36 @@ namespace KutuphaneYonetimSistemi
         private void KategoriListele()
         {
             var kategoriler = db.tbl_Kategori.Where(x => x.Durum == true);
-            cbb_Kategori.DisplayMember = "KategoriAdi";
-            cbb_Kategori.ValueMember = "Id";
             cbb_Kategori.DataSource = kategoriler.ToList();
+            cbb_Kategori.DisplayMember = "KategoriAdi";
+            cbb_Kategori.ValueMember = "İd";
+            
 
         }
 
         private void YayinEviListele()
         {
             var yayinEvi = db.tbl_YayınEvi.Where(y => y.Durum == true);
-            cbbYayinevi.DisplayMember = "YayınEviAdi";
-            cbbYayinevi.ValueMember = "Id";
             cbbYayinevi.DataSource = yayinEvi.ToList();
+            cbbYayinevi.DisplayMember = "YayınEviAdi";
+            cbbYayinevi.ValueMember = "ıd";
+            
         }
 
         private void YazarlariListele()
         {
-            var yazar = db.tbl_Yazar.Where(y => y.Durum == true)
-                .Select(s => new
-                {
-                    İd = s.Id,
-                    Yazar = s.YazarAdi + " " + s.YazarSoyadi
+            var yazar = db.tbl_Yazar.Where(y => y.Durum == true);
+                //.Select(s => new
+                //{
+                //    İd = s.Id,
+                //    Yazar = s.YazarAdi + " " + s.YazarSoyadi
 
 
-                });
-            cbbYazar.DisplayMember = "Yazar";
-            cbbYazar.ValueMember = "Id";
+                //});
             cbbYazar.DataSource = yazar.ToList();
+            cbbYazar.DisplayMember = "YazarAdi";
+            cbbYazar.ValueMember = "Id";
+            
         }
 
 
@@ -103,13 +106,18 @@ namespace KutuphaneYonetimSistemi
             kitaplar.Durumu = "A";
             kitaplar.Aciklama = txtAciklama.Text;
             kitaplar.SayfaSayisi = short.Parse(txtSayfaSayisi.Text);
-            kitaplar.BasımYılı = txtBasimYili.Text;
-            kitaplar.tbl_Yazar = db.tbl_Yazar.Find(int.Parse(cbb_Kategori.SelectedValue.ToString()));
+            kitaplar.Adet = short.Parse(txtAdet.Text);
+            
+            kitaplar.BasımYılı = textBox_Basim.Text;
+            kitaplar.Yazar = db.tbl_Yazar.Find((cbbYazar.SelectedValue)).Id;
             kitaplar.tbl_YayınEvi = db.tbl_YayınEvi.Find(int.Parse(cbbYayinevi.SelectedValue.ToString()));
             kitaplar.tbl_Kategori = db.tbl_Kategori.Find(int.Parse(cbb_Kategori.SelectedValue.ToString()));
+            db.tbl_Kitaplar.Add(kitaplar);
+            db.SaveChanges();
+            Kontrol();
 
-            
-        
+
+
 
 
         }
@@ -117,11 +125,11 @@ namespace KutuphaneYonetimSistemi
 
         private void btn_KitapGuncelle_Click(object sender, EventArgs e)
         {
-            string ad = txtKitapAdi.Text;
-            var guncelle = db.tbl_Kitaplar.Where(w => w.KitapAdi == ad).FirstOrDefault();
+            
+            var guncelle = db.tbl_Kitaplar.Where(k => k.İd==id).FirstOrDefault();
             guncelle.KitapAdi = txtKitapAdi.Text;
             guncelle.SayfaSayisi = short.Parse(txtSayfaSayisi.Text);
-            guncelle.BasımYılı = txtBasimYili.Text;
+            guncelle.BasımYılı = textBox_Basim.Text;
             guncelle.Adet = short.Parse(txtAdet.Text);
             guncelle.tbl_Yazar= db.tbl_Yazar.Find(int.Parse(cbbYazar.SelectedValue.ToString()));
             guncelle.tbl_YayınEvi= db.tbl_YayınEvi.Find(int.Parse(cbbYayinevi.SelectedValue.ToString()));
@@ -153,7 +161,7 @@ namespace KutuphaneYonetimSistemi
         {
             txtKitapAdi.Text = "";
             txtSayfaSayisi.Text = "";
-            txtBasimYili.Text = "";
+            textBox_Basim.Text = "";
             txtAdet.Text = "";
             txtAciklama.Text = "";
             cbbYayinevi.Text = "";
@@ -167,17 +175,18 @@ namespace KutuphaneYonetimSistemi
         {
             Temizle();
         }
-
+        int id;
         private void KitapİslemDTV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            id  = int.Parse(KitapİslemDTV.CurrentRow.Cells[0].Value.ToString());
             txtKitapAdi.Text = KitapİslemDTV.CurrentRow.Cells[1].Value.ToString();
-            txtSayfaSayisi.Text = KitapİslemDTV.CurrentRow.Cells[2].Value.ToString();
-            //txtBasimYili.Text = KitapİslemDTV.CurrentRow.Cells[3].Value.ToString();
-            txtAdet.Text = KitapİslemDTV.CurrentRow.Cells[4].Value.ToString();
-            txtAciklama.Text = KitapİslemDTV.CurrentRow.Cells[5].Value.ToString();
-            cbb_Kategori.Text = KitapİslemDTV.CurrentRow.Cells[6].Value.ToString();
-            cbbYazar.Text = KitapİslemDTV.CurrentRow.Cells[7].Value.ToString();
-            cbbYayinevi.Text = KitapİslemDTV.CurrentRow.Cells[8].Value.ToString();
+            cbb_Kategori.Text = KitapİslemDTV.CurrentRow.Cells[2].Value.ToString();
+            cbbYazar.Text = KitapİslemDTV.CurrentRow.Cells[3].Value.ToString();
+            cbbYayinevi.Text = KitapİslemDTV.CurrentRow.Cells[4].Value.ToString();
+            txtSayfaSayisi.Text = KitapİslemDTV.CurrentRow.Cells[5].Value.ToString();
+            textBox_Basim.Text = KitapİslemDTV.CurrentRow.Cells[6].Value.ToString();
+            txtAdet.Text = KitapİslemDTV.CurrentRow.Cells[7].Value.ToString();
+            txtAciklama.Text = KitapİslemDTV.CurrentRow.Cells[8].Value.ToString();
             cbbDurum.Text = KitapİslemDTV.CurrentRow.Cells[9].Value.ToString();
 
 
@@ -189,6 +198,11 @@ namespace KutuphaneYonetimSistemi
         }
 
         private void txtKitapAdi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelYazar_Click(object sender, EventArgs e)
         {
 
         }
